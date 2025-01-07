@@ -6,7 +6,7 @@ services:
     container_name: firefly_iii_core
     restart: unless-stopped
     volumes:
-      - ./firefly_upload:/var/www/html/storage/upload
+      - /home/abenegas/docker/Firefly3/firefly_upload:/var/www/html/storage/upload
     env_file: .env
     networks:
       - firefly_iii
@@ -24,7 +24,7 @@ services:
     networks:
       - firefly_iii
     volumes:
-      - ./firefly_db:/var/lib/mysql
+      - /home/abenegas/docker/Firefly3/firefly_db:/var/lib/mysql
       
   cron:
     #
